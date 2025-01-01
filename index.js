@@ -58,3 +58,6 @@ function contact(){
                     alert("Thanks for Join : "+name.value)
                 }
             }
+            function open_form() {
+                window.open('form.html', '_blank');  // Open in a new tab or window
+            }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Membership</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+
+    <h2 style="text-align: center; color: #333;">Select Your Membership</h2>
+
+    <!-- Membership Plan Buttons -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button onclick="changeMembership('Basic', 1000)" style="margin: 10px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Basic Plan</button>
+        <button onclick="changeMembership('Premium', 1500)" style="margin: 10px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Premium Plan</button>
+        <button onclick="changeMembership('Diamond', 2000)" style="margin: 10px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Diamond Plan</button>
+    </div>
+
+    <!-- Membership Details -->
+    <div style="max-width: 500px; margin: 0 auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h3>Selected Membership</h3>
+        <p id="selectedPlan" style="font-size: 18px; margin-bottom: 10px;">Membership Type: <strong>Basic</strong></p>
+        <p id="price" style="font-size: 18px; margin-bottom: 10px;">Price: <strong>1000 Rs</strong></p>
+
+        <h4>Choose Payment Method</h4>
+        
+        <!-- Payment Methods -->
+        <div style="margin-bottom: 20px;">
+            <button onclick="payWithUPI()" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Pay with UPI</button>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <button onclick="payWithCard()" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Pay with Credit/Debit Card</button>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <button onclick="payWithCOD()" style="width: 100%; padding: 10px; background-color: #ffc107; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Cash on Delivery</button>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <button onclick="payCashSelf()" style="width: 100%; padding: 10px; background-color: #dc3545; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Pay Cash Self</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to change membership type and price based on button click
+        function changeMembership(plan, price) {
+            document.getElementById('selectedPlan').innerHTML = `Membership Type: <strong>${plan}</strong>`;
+            document.getElementById('price').innerHTML = `Price: <strong>${price} Rs</strong>`;
+        }
+
+        // Payment method functions (example logic for each payment method)
+        function payWithUPI() {
+            alert("You are about to pay with UPI! Proceed to your UPI app for payment.");
+            // Implement UPI payment logic here
+        }
+
+        function payWithCard() {
+            alert("You are about to pay with Credit/Debit Card! Please enter your card details.");
+            // Implement Credit/Debit card payment logic here
+        }
+
+        function payWithCOD() {
+            alert("You have selected Cash on Delivery. Pay the amount when the delivery is made.");
+            // Implement COD logic here
+        }
+
+        // New function for Cash Self (direct cash payment at the gym)
+        function payCashSelf() {
+            alert("You have selected 'Pay Cash Self'. You can pay directly at the gym.");
+            // Implement logic for in-person cash payment
+        }
+    </script>
+
+</body>
+</html>
